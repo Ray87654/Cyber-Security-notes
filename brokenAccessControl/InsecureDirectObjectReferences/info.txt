@@ -1,2 +1,15 @@
 -direct object references
 Direct Object References are when an application uses client-provided input to access data & objects.
+
+*abusement of authorization
+WebGoat/IDOR/profile with session -> WebGoat/IDOR/profile/2342384
+
+found profile with userId=2342388
+
+*modify something using PUT request on rest api
+in the request, you should modify the "Content-Type" to "application/json" (or you will get the media error cause rest api only use json)
+and add the payload with all the attribute to modify the profile
+payload:
+{"role" : 1,"color" : "red","size" : "small","name" : "Tom Cat","userId" : "2342388"}
+
+
