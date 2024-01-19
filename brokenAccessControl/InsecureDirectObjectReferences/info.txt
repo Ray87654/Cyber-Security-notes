@@ -1,0 +1,2 @@
+-direct object references
+Direct Object References are when an application uses client-provided input to access data & objects.
