@@ -1,0 +1,17 @@
+-Session Hijacking
+
+session IDs that are not complex and random enough and get session-based brute force attacks,
+giving out authenticated session to hackers
+
+we can use the Sequence in burp suite to get a series of hijack_cookie and then sort the tokens
+and try to inspect it.
+By inspecting it, we can see the numbers before the dash is sequence and the after is epoch time
+and we can see that there is some sequencial numbers missing between, which is the numbers that is used by others
+so we can brute force the numbers and the epoch time in between
+ex:
+mine: ...75-t1
+mine: ...76-t2
+mine: ...78-t4
+
+in this case, the session cookie with sequence number = ...77 with epoch time between t1 and t2 might be using for someone else
+

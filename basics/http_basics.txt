@@ -1,0 +1,26 @@
+how to trap a request/response with a HTTP proxy
+
+-http
+
+request parameters, cookies, java sourse code
+
+in each request...
+1. request or response line
+2. header section
+3. body
+
+A GET request can have url parameters and those parameters
+will be available in the web access logs
+
+In a POST request, the user supplied data will follow the 
+optional headers and is not part of the contained within the POST URL.
+
+-OWASP
+Open Worldwide Application Security Project
+
+-Google Chrome Developer Tools
+html sourse
+CSS sourse: margin->boarder->padding->web
+console
+sourse
+

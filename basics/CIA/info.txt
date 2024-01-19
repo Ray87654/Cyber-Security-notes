@@ -1,0 +1,7 @@
+-CIA(confidentiality, integrity, availability) TRIAD
+1. confidentiality
+confidentiality requires that unauthorized users should not be able to access sensitive resources. Confidentiality must be balanced with availability; authorized persons must still access the resources they have been granted permissions for.
+2. Integrity
+Data must not change during transit, and unauthorized entities should not alter the data.
+3. availability
+authorized persons should have access to permitted resources at all times
