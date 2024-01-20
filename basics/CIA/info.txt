@@ -5,3 +5,122 @@ confidentiality requires that unauthorized users should not be able to access se
 Data must not change during transit, and unauthorized entities should not alter the data.
 3. availability
 authorized persons should have access to permitted resources at all times
+
+------中文-------
+
+CIA triad 資安鐵三角(三原則)
+
+A. 機密性（Confidentiality）
+
+    機密性旨在對數據進行保密，也就是限制未經授權的資料之訪問與修改權，
+    除了確保隱密性，也降低機密資料陷入威脅的機率。
+
+    為了保護資訊的機密性，常見的對策包含：
+        1. 將數據分類或標籤化，甚至是對資料存取者進行身份驗證
+        2. 對傳輸中的數據進行加密
+        3. 公司提供相關課程提高員工資安意識。
+
+    違反了機密性的例子：
+        1. 公司的資料密鑰被駭客所取得
+        2. 含有敏感訊息的電子郵件傳送到了不正確的用戶
+        3. 駭客於資料傳輸的過程截取或竊聽來獲取敏感資訊
+
+    確保了機密性的例子：
+        1. 資料加密
+        2. 資料經過認證才得以取用
+            a. 安全地保護密碼 
+            b. 多方面的認證(MFA Multi-Factor authentication)
+            c. 生物辨識驗證
+        3. 讓資訊顯現的地方/次數降到最少
+        4. 物理性的安全控制 Ex. 確保伺服器主機房的安全
+
+B. 完整性（Integrity）
+    資安的完整性，指的是數據沒有遭受未經授權者篡改，以確保資料在整個生命週期內的一致性與精確性。
+    舉幾個簡單的例子，如：
+        在電商平台購物的消費者，希望所有產品與定價的資訊是準確的，並且所有訂購資訊在下訂單後不會改變。
+        銀行需要確保銀行存戶的帳戶金額的準確性與即時性，無論是透過ATM、網銀轉帳，該餘額都無法被有心人士修改。
+
+    與機密性相同，完整性會因為篡改入侵檢測系統或修改系統日誌而直接受到損害，
+    也可能是人為疏忽或編碼錯誤而造成資安的完整性受到威脅，
+    
+    常見的保護措施包含：電子文件導入數位簽章、獲取具公信力機構發行認證的安全性證書等。
+
+    違反了完整性的例子：
+        1. 輸入資料時發生人為錯誤
+        2. 資料傳輸時錯誤
+        3. 軟體錯誤或硬體異常
+        4. 駭客存取了他們不被允許的資料並且修改
+    
+    確保了完整性的例子：
+        1. 完善運作的身分認證方法並存取控制
+        2. 使用哈希函數檢查完整性
+        3. 備份和冗餘
+            a. 備份可以防止更廣泛的問題，例如驅動器故障、詐欺、火災，甚至意外檔案刪除，但不提供即時保護。
+            b. 冗餘可確保操作或服務在資料損壞或遺失期間可以繼續
+            https://www.zoginc.com/blog/backups-vs-redundancy-in-it-support
+        4. 審計(檢查)和紀錄
+
+C. 可用性（Availability）
+    資安的可用性意味著已啟動或正在運行的程序，授權者能夠即時地訪問這些資源，
+    假如某系統、應用程式或數據無法即時讓授權用戶進行使用時，那麼資訊就無法為企業產生最大化的價值。
+
+    許多情況都會危及可用性，
+    包括軟硬體故障、電源故障、自然災害和人為疏失，電腦病毒也會直接衝擊可用性，
+    常採取的應對策略包括：定期軟體修補與系統升級、備份等保護解決方案。
+
+    違反了可用性的例子：
+        1. 阻斷服務攻擊 (DOS Denial Of Service attack)
+            使目標電腦的網路或系統資源耗盡，使服務暫時中斷或停止，導致其正常使用者無法訪問
+            https://zh.wikipedia.org/zh-tw/%E9%98%BB%E6%96%B7%E6%9C%8D%E5%8B%99%E6%94%BB%E6%93%8A
+        2. 硬體異常
+        3. 火災或其他自然災害
+        4. 軟體或網路配置不當
+    
+    確保了可用性的例子：
+        1. 入侵檢測系統 (IDS intrusion detection systems)
+            入侵檢測系統是一種網路安全裝置或應用軟體，可以監控網路傳輸或者系統，
+            檢查是否有可疑活動或者違反企業的政策。偵測到時發出警報或者採取主動反應措施
+            https://zh.wikipedia.org/zh-tw/%E5%85%A5%E4%BE%B5%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F 
+        2. 網路流量控制
+        3. 防火牆
+        4. 物理性的確保硬體和基礎設施
+            防火、防水和其他保護措施
+        5. 硬體維護
+        6. 冗餘
+    
+    https://www.thenewslens.com/article/164125 
+
+題目：
+questions: 
+	0 : How could an intruder harm the security goal of confidentiality?
+	solutions: 
+		1 :  By deleting all the databases.
+		2 :  By stealing a database where general configuration information for the system is stored.
+		3 :  By stealing a database where names and emails are stored and uploading it to a website.
+     	4 :  Confidentiality can't be harmed by an intruder. 
+
+    1 :  How could an intruder harm the security goal of integrity?
+    solutions :  
+        1 :  By changing the names and emails of one or more users stored in a database.
+        2 :  By listening to incoming and outgoing network traffic.
+        3 :  By bypassing authentication mechanisms that are in place to manage database access.
+        4 :  Integrity can only be harmed when the intruder has physical access to the database storage. 
+
+    2 :  How could an intruder harm the security goal of availability?
+    solutions :  
+        1 :  By exploiting bugs in the systems software to bypass authentication mechanisms for databases.
+        2 :  By redirecting emails with sensitive data to other individuals.
+        3 :  Availability can only be harmed by unplugging the power supply of the storage devices.
+        4 :  By launching a denial of service attack on the servers. 
+
+    3 :  What happens if at least one of the CIA security goals is harmed?
+    solutions :  
+        1 :  A system can be considered safe until all the goals are harmed. Harming one goal has no effect on the systems security.
+        2 :  The systems security is compromised even if only one goal is harmed.
+        3 :  It's not that bad when an attacker reads or changes data, at least some data is still available, hence only when the goal of availability is harmed the security of the system is compromised.
+        4 :  It shouldn't be a problem if an attacker changes data or makes it unavailable, but reading sensitive data is not tolerable. Theres only a problem when confidentiality is harmed.
+
+question_0_solution Solution 3
+question_1_solution Solution 1
+question_2_solution Solution 4
+question_3_solution Solution 2
